@@ -2,28 +2,15 @@ class Robot
 
   def random_name
     chars = ("A".."Z").to_a
-    num = ("0".."9").to_a
+    nums = ("0".."9").to_a
 
-    # VERSION 2
-    [*1..5].map do |e|
-      if e < 3
-        e = chars[rand(0..chars.size-1)]
+    [*1..5].map do |ele|
+      if ele < 3
+        ele = chars[rand(0..chars.size-1)]
       else
-        e = num[rand(0..num.size-1)]
+        ele = nums[rand(0..nums.size-1)]
       end
     end.join
-
-    # VERSION 1
-
-    # rst = ""
-    # 1.upto(5) do |i|
-    #   if i < 3
-    #     rst << chars[rand(0..chars.size-1)]
-    #   else
-    #     rst << num[rand(0..num.size-1)]
-    #   end
-    # end
-    # rst
   end
 
   def initialize
