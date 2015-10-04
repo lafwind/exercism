@@ -4,6 +4,7 @@ class Grains
   end
 
   def self.total
-    (0..63).map { |e| 2 ** e }.reduce(:+)
+    chessboard = (1..64)
+    chessboard.map { |ele| square(ele) }.reduce(:+)
   end
 end
