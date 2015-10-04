@@ -1,14 +1,11 @@
 class Robot
 
   def random_name
-    chars = ("A".."Z").to_a
-    nums = ("0".."9").to_a
-
     [*1..5].map do |ele|
       if ele < 3
-        ele = chars[rand(0..chars.size-1)]
+        ele = [*'A'..'Z'].sample
       else
-        ele = nums[rand(0..nums.size-1)]
+        ele = [*'0'..'9'].sample
       end
     end.join
   end
