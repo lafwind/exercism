@@ -19,11 +19,15 @@ class CircularBuffer
     write_update(ele) unless ele.nil?
   end
 
+  def update_buffer
+    @read_point = (@read_point + 1) % @buf_size
+    @now_size -= 1
+  end
+
   def write!(ele)
     unless ele.nil?
       if @now_size == @buf_size
-        @read_point = (@read_point + 1) % @buf_size
-        @now_size -= 1
+        update_buffer
       end
       write_update(ele)
     end
@@ -31,8 +35,7 @@ class CircularBuffer
 
   def read
     raise BufferEmptyException if @now_size == 0
-    @read_point = (@read_point + 1) % @buf_size
-    @now_size -= 1
+    update_buffer
     @buffer[@read_point]
   end
 
