@@ -10,6 +10,12 @@ class QueensTest < Minitest::Test
     assert_equal [7, 3], queens.black
   end
 
+  def test_initial_one_color
+    queens = Queens.new(white: [1, 1])
+    assert_equal [1, 1], queens.white
+    assert_equal [7, 3], queens.black
+  end
+
   def test_specific_placement
     # skip
     queens = Queens.new(white: [3, 7], black: [6, 1])

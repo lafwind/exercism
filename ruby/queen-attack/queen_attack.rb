@@ -1,9 +1,10 @@
 class Queens
   attr_reader :white, :black
 
-  def initialize(args = { white: [0, 3], black:  [7, 3] })
-    raise ArgumentError if args.values.uniq.length == 1
-    @white, @black = args[:white], args[:black]
+  def initialize(args = {})
+    @white = args[:white] || [0, 3]
+    @black = args[:black] || [7, 3]
+    raise ArgumentError if @white == @black
   end
 
   def to_s
@@ -13,9 +14,19 @@ class Queens
     board.map { |place| place.join(' ') }.join("\n")
   end
 
+  def is_diagonal?
+    (@white.first - @black.first).abs == (@white.last - @black.last).abs
+  end
+
   def attack?
-    (@white.first - @black.first).abs == (@white.last - @black.last).abs ||
-      @white.first == @black.first ||
-      @white.last == @black.last
+     is_diagonal? || is_same_row? || is_same_column?
+  end
+
+  def is_same_row?
+    @white.first == @black.first
+  end
+
+  def is_same_column?
+    @white.last == @black.last
   end
 end
