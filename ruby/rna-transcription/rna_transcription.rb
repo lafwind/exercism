@@ -23,38 +23,4 @@ class Complement
     end
     rst
   end
-
-  # VERSION = 1
-
-  # def self.of_dna (seq)
-  #   rst = ""
-  #   seq.each_char do |e|
-
-  #     case e
-  #     when 'C' then rst += 'G'
-  #     when 'G' then rst += 'C'
-  #     when 'T' then rst += 'A'
-  #     when 'A' then rst += 'U'
-  #     else raise ArgumentError
-  #     end
-
-  #   end
-  #   rst
-  # end
-
-  # def self.of_rna (seq)
-  #   rst = ""
-  #   seq.each_char do |e|
-
-  #     case e
-  #     when 'G' then rst += 'C'
-  #     when 'C' then rst += 'G'
-  #     when 'A' then rst += 'T'
-  #     when 'U' then rst += 'A'
-  #     else raise ArgumentError
-  #     end
-
-  #   end
-  #   rst
-  # end
 end
