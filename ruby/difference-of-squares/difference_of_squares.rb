@@ -8,8 +8,7 @@ class Squares
   end
 
   def sum_of_squares
-    (1..@n).map { |i| i ** 2 }.reduce(:+)
-    # (1..@n).inject { |sum, i| sum += (i**2) }
+    (1..@n).inject { |sum, i| sum += (i**2) }
   end
 
   def difference
