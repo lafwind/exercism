@@ -4,10 +4,8 @@ class Hamming
   def self.compute(a, b)
     raise ArgumentError if a.length != b.length
 
-    rst, tmp = 0, b.chars
-    a.chars.each do |ele|
-      rst += 1 if ele != tmp.shift
-    end
-    rst
+    a.chars.map.with_index do |ele, idx|
+      ele != b.chars[idx] ? 1 : nil
+    end.compact.reduce(0, &:+)
   end
 end
