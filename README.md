@@ -1,3 +1,4 @@
 ## Solutions of Exercism
 
-* Ruby -- Finish
+* Ruby   -- Finish
+* Racket -- Doing now
