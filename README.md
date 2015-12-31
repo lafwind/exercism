@@ -2,3 +2,4 @@
 
 * Ruby   -- Finish
 * Racket -- Doing now
+* Elixir -- Doing now
